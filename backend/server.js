@@ -12,8 +12,12 @@ import expenseRoute from "./route/expense.route.js";
 import dashboardRoute from "./route/dashboard.route.js";
 
 // Connect to Database (Only once)
-connectDB();
-
+try {
+  await connectDB();
+} catch (error) {
+  console.log("Failed to connect to database ", error.message);
+  
+}
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
