@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import connectDB from "./config/db.js";
+// import connectDB from "./config/db.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -12,12 +12,12 @@ import expenseRoute from "./route/expense.route.js";
 import dashboardRoute from "./route/dashboard.route.js";
 
 // Connect to Database (Only once)
-try {
-  await connectDB();
-} catch (error) {
-  console.log("Failed to connect to database ", error.message);
+// try {
+//   await connectDB();
+// } catch (error) {
+//   console.log("Failed to connect to database ", error.message);
   
-}
+// }
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
